@@ -1,0 +1,112 @@
+# Slovak translation for folder-color
+# Copyright (c) 2014 Rosetta Contributors and Canonical Ltd 2014
+# This file is distributed under the same license as the folder-color package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2014.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: folder-color\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2014-11-08 09:47+0100\n"
+"PO-Revision-Date: 2014-11-08 12:56+0100\n"
+"Last-Translator: Roman Ďuriška <johnnycage23@gmail.com>\n"
+"Language-Team: Slovak <sk@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2014-11-08 11:08+0000\n"
+"X-Generator: Poedit 1.6.10\n"
+"Language: sk\n"
+
+#: ../nautilus-extension/folder-color.py:29
+msgid "Brown"
+msgstr "Hnedá"
+
+#: ../nautilus-extension/folder-color.py:29
+msgid "Blue"
+msgstr "Modrá"
+
+#: ../nautilus-extension/folder-color.py:29
+msgid "Green"
+msgstr "Zelená"
+
+#: ../nautilus-extension/folder-color.py:29
+msgid "Grey"
+msgstr "Šedá"
+
+#: ../nautilus-extension/folder-color.py:29
+msgid "Orange"
+msgstr "Oranžová"
+
+#: ../nautilus-extension/folder-color.py:29
+msgid "Pink"
+msgstr "Ružová"
+
+#: ../nautilus-extension/folder-color.py:29
+msgid "Red"
+msgstr "Červená"
+
+#: ../nautilus-extension/folder-color.py:29
+msgid "Purple"
+msgstr "Fialová"
+
+#: ../nautilus-extension/folder-color.py:29
+msgid "Yellow"
+msgstr "Žltá"
+
+#: ../nautilus-extension/folder-color.py:29
+msgid "Favorite"
+msgstr "Obľúbené"
+
+#: ../nautilus-extension/folder-color.py:29
+msgid "Finished"
+msgstr "Dokončené"
+
+#: ../nautilus-extension/folder-color.py:29
+msgid "Important"
+msgstr "Dôležité"
+
+#: ../nautilus-extension/folder-color.py:29
+msgid "In Progress"
+msgstr "Nedokončené"
+
+#: ../nautilus-extension/folder-color.py:104
+msgid "Choose a Folder Color"
+msgstr "Vybrať farbu priečinka"
+
+#: ../nautilus-extension/folder-color.py:235
+msgid "Folders' Color"
+msgstr "Farba priečinkov"
+
+#: ../nautilus-extension/folder-color.py:237
+msgid "Folder's Color"
+msgstr "Farba priečinka"
+
+#. Custom color
+#: ../nautilus-extension/folder-color.py:251
+msgid "Custom"
+msgstr "Vlastná"
+
+#. Restore
+#. Separator
+#: ../nautilus-extension/folder-color.py:257
+msgid "Restore"
+msgstr "Obnoviť"
+
+#: ../nautilus-extension/folder-color.py:260
+msgid "By Default"
+msgstr "Predvolené"
+
+#: ../nautilus-extension/folder-color.py:269
+msgid "Categorize"
+msgstr "Kategorizovať"
+
+#. Separator
+#: ../nautilus-extension/folder-color.py:281
+msgid "Support this app"
+msgstr "Podporiť aplikáciu"
+
+#. Donation
+#: ../nautilus-extension/folder-color.py:284
+msgid "Donate? Click for hiding"
+msgstr "Prispieť? Kliknutím skryť"

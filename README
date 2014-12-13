@@ -1,0 +1,174 @@
+Folder Color © 2012-2014 ﻿﻿Marcos Alvarez Costales
+================================================
+
+WHAT IS IT?
+===========
+A Nautilus extension for choosing the color of a folder in Ubuntu with just a right-click.
+
+
+
+HOW DO I INSTALL & RUN IT?
+==========================
+From a PPA:
+    # add-apt-repository ppa:costales/folder-color
+    # apt-get update && sudo apt-get install folder-color
+From the code (take a look to the dependencies):
+    $ bzr branch lp:folder-color && cd folder-color && sudo python setup.py install --prefix=/usr
+
+Then, restart Nautilus
+    $ nautilus -q
+You may also need to refresh the system icons:
+    # gtk-update-icon-cache /usr/share/icons/hicolor/
+
+
+
+DEPENDENCIES
+============
+For Nautilus:
+    python-nautilus, nautilus, libgtk2.0-bin
+For Nemo:
+    python-nemo, nemo, libgtk2.0-bin
+For Caja:
+    python-caja, caja, gir1.2-caja, libgtk2.0-bin
+
+
+
+WHAT DOES IT LOOK LIKE?
+=======================
+Take a look here!
+http://foldercolor.tuxfamily.org/
+
+
+
+
+WHAT IS NEW?
+============
+  * Ligther version of RAVEfinity icons
+
+
+
+LICENSE
+====================
+Folder Color code is licensed under the GPL v3.
+http://www.gnu.org/licenses
+
+
+
+ICONS LICENSE
+=============
+The icons are licensed under GPL v2. Folder Color is mixing 2 themes:
+- RAVEfinity artwork http://www.ravefinity.com/
+- GNOME artwork http://commons.wikimedia.org/wiki/GNOME_Desktop_icons
+
+
+
+
+
+HOW TO CREATE A THEME
+=====================
+1. THE TRICK
+Folder Color is reading the icons from /usr/share/icons/hicolor by default.
+If you create the same icons in your theme path, they will overwrite the icons in Folder Color. Then, create your icons under this directory:
+    /usr/share/icons/<your_theme>
+
+
+2. CREATE A QUICK & BASIC THEME
+2.1: SPECIAL CUSTOM COLOR FILE
+Folder Color will try to find this important file:
+    /usr/share/icons/<your_theme>/scalable/places/folder_color_custom.svg
+This file has to exists in your theme always! This icon is not using colors, it's using 3 constants inside the file. Then, when the user choose a custom color, Folder Color is replacing those constants as:
+    #value_light = Color selected by user in hexadecimal.
+    #value_middle = (Color selected by user in hexadecimal - 2500)
+    #value_dark = (Color selected by user in hexadecimal - 5000)
+
+2.2: COLORS
+    /usr/share/icons/<your_theme>/scalable/places/folder_color_black.svg
+    /usr/share/icons/<your_theme>/scalable/places/folder_color_brown.svg
+    /usr/share/icons/<your_theme>/scalable/places/folder_color_blue.svg
+    /usr/share/icons/<your_theme>/scalable/places/folder_color_green.svg
+    /usr/share/icons/<your_theme>/scalable/places/folder_color_grey.svg
+    /usr/share/icons/<your_theme>/scalable/places/folder_color_orange.svg
+    /usr/share/icons/<your_theme>/scalable/places/folder_color_pink.svg
+    /usr/share/icons/<your_theme>/scalable/places/folder_color_red.svg
+    /usr/share/icons/<your_theme>/scalable/places/folder_color_purple.svg
+    /usr/share/icons/<your_theme>/scalable/places/folder_color_yellow.svg
+
+2.3: EMBLEMS
+    /usr/share/icons/<your_theme>/scalable/emblems/folder_emblem_favorite.svg
+    /usr/share/icons/<your_theme>/scalable/emblems/folder_emblem_finished.svg
+    /usr/share/icons/<your_theme>/scalable/emblems/folder_emblem_important.svg
+    /usr/share/icons/<your_theme>/scalable/emblems/folder_emblem_in_progress.svg
+
+2.4: CONTEXTUAL MENU ENTRIES:
+    /usr/share/icons/<your_theme>/16x16/actions/folder_color_picker.svg
+    /usr/share/icons/<your_theme>/16x16/actions/folder_color_edit.svg
+    /usr/share/icons/<your_theme>/16x16/actions/folder_color_undo.svg
+
+
+3. COMPLETE THEME (OPTIONAL)
+3.1: PRECONFIGURED USER FOLDERS
+The default user folders have different emblems: Desktop, Documents, Download, Music, Pictures, Public, Templates and Videos.
+Then, for each color, create these icons (this example is just for the blue color):
+    /usr/share/icons/<your_theme>/scalable/places/folder_color_blue_desktop.svg
+    /usr/share/icons/<your_theme>/scalable/places/folder_color_blue_documents.svg
+    /usr/share/icons/<your_theme>/scalable/places/folder_color_blue_downloads.svg
+    /usr/share/icons/<your_theme>/scalable/places/folder_color_blue_music.svg
+    /usr/share/icons/<your_theme>/scalable/places/folder_color_blue_pictures.svg
+    /usr/share/icons/<your_theme>/scalable/places/folder_color_blue_public.svg
+    /usr/share/icons/<your_theme>/scalable/places/folder_color_blue_templates.svg
+    /usr/share/icons/<your_theme>/scalable/places/folder_color_blue_videos.svg
+
+
+4. FULL THEME (OPTIONAL)
+4.1: CUSTOM COLORS FOR DEFAULT FOLDERS:
+Custom color for Default folders too (Read the previously 2.1 section about these custom files):
+    /usr/share/icons/<your_theme>/scalable/places/folder_color_custom_desktop.svg
+    /usr/share/icons/<your_theme>/scalable/places/folder_color_custom_documents.svg
+    /usr/share/icons/<your_theme>/scalable/places/folder_color_custom_downloads.svg
+    /usr/share/icons/<your_theme>/scalable/places/folder_color_custom_music.svg
+    /usr/share/icons/<your_theme>/scalable/places/folder_color_custom_pictures.svg
+    /usr/share/icons/<your_theme>/scalable/places/folder_color_custom_public.svg
+    /usr/share/icons/<your_theme>/scalable/places/folder_color_custom_templates.svg
+    /usr/share/icons/<your_theme>/scalable/places/folder_color_custom_videos.svg
+
+4.2: RESOLUTIONS
+Reply the icons for all resolutions:
+    16x16/places/folder_color_<color>_<default_folder>.svg
+    22x22/places/folder_color_<color>_<default_folder>.svg
+    24x24/places/folder_color_<color>_<default_folder>.svg
+    32x32/places/folder_color_<color>_<default_folder>.svg
+    48x48/places/folder_color_<color>_<default_folder>.svg
+    64x64/places/folder_color_<color>_<default_folder>.svg
+    128x128/places/folder_color_<color>_<default_folder>.svg
+
+    
+5. HOW TO CHECK?
+Copy your icons into
+    /usr/share/icons/<your_theme>/
+After install them, remember to refresh your theme:
+    # gtk-update-icon-cache /usr/share/icons/<your_theme>
+And restart Nautilus:
+    $ nautilus -q
+
+
+6. WHAT ICONS TO DO? MY PERSONAL RECOMMENDATION
+Make all the icons is a really big work.
+I'd recommend you to create just the icons 2.1 & 2.2. If you want more: 2.3 & 2.4.
+If you are full of beans, create 3.1 too.
+With the time, if a lot of users are using this extension, extend it with the 4.1 & 4.2.
+
+
+7. DOUBTS?
+Do you have any doubt or problem? Contact me here: https://launchpad.net/~costales/+contactuser I'll try to help you :)
+
+
+
+
+
+
+PREINSTALL FOLDER COLOR IN YOUR OS
+==================================
+If you want to include Folder Color preinstalled in a distro, I allow you to remove the Donation menu entry (I understand it has no place for you).
+How could you hide the Donation menu entry by default? Create this folder for all users (/etc/skel directory):
+~/.config/folder-color/hide_donation
+I'll not receive donations from the users of your OS, then, if you can, a small donation from your distro will be really appreciate!
