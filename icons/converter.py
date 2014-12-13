@@ -1,4 +1,5 @@
 import os
+import shutil
 
 addons = [
 ['folder',''],
@@ -25,6 +26,13 @@ colors = [
 ['yellow', '#f39c12', '#f1c40f', '#3c2f1b']
 ]
 
+emblems = [
+['emblem-ok','folder_emblem_finished'],
+['emblem-favorite','folder_emblem_favorite'],
+['emblem-important','folder_emblem_important'],
+['emblem-synchronizing','folder_emblem_in_progress'],
+]
+
 folders = [
 '16x16',
 '22x22',
@@ -33,7 +41,8 @@ folders = [
 '48x48',
 '64x64',
 '128x128',
-'256x256'
+'256x256',
+'scalable'
 ]
 
 if not os.path.isdir('hicolor'):
@@ -48,31 +57,53 @@ for folder in folders:
 	if not os.path.isdir('hicolor/' + folder + '/places'):
 		os.mkdir('hicolor/' + folder + '/places')
 
+	if not os.path.isdir('hicolor/' + folder + '/emblems'):
+		os.mkdir('hicolor/' + folder + '/emblems')
+
 
 	directory = '/usr/share/icons/Numix/' + folder + '/places'
-	for svg in os.listdir(directory):
-		if svg[-3:] != 'svg':
-			continue
 
-		for addon in addons:
-			f = open(directory + '/' + addon[0] + '.svg', 'r')
-			data = f.read()
+	for addon in addons:
+		svg = directory + '/' + addon[0] + '.svg';
+
+		if not os.path.isfile(svg):
+			svg = '/usr/share/icons/Numix/256x256/places' + '/' + addon[0] + '.svg';
+
+		f = open(svg, 'r')
+		data = f.read()
+		f.close()
+
+		for color in colors:
+			name = color[0]
+			color1 = color[1]
+			color2 = color[2]
+			color3 = color[3]
+
+			changed = data.replace('#e9a439', color1)
+			changed = changed.replace('#f5c14e', color2)
+			changed = changed.replace('#3c2f1b', color3)
+
+			f = open('hicolor/' + folder + '/places/folder_color_' + name + addon[1] + '.svg', 'w')
+			f.write(changed)
 			f.close()
 
-			for color in colors:
-				name = color[0]
-				color1 = color[1]
-				color2 = color[2]
-				color3 = color[3]
 
-				changed = data.replace('#e9a439', color1)
-				changed = changed.replace('#f5c14e', color2)
-				changed = changed.replace('#3c2f1b', color3)
+	directory = '/usr/share/icons/Numix/' + folder + '/emblems'
+
+	for emblem in emblems:
+		svg = directory + '/' + emblem[0] + '.svg';
+		if not os.path.isfile(svg):
+			svg = '/usr/share/icons/Numix/256x256/emblems' + '/' + emblem[0] + '.svg';
+
+		f = open(svg, 'r')
+		data = f.read()
+		f.close()
+
+		f = open('hicolor/' + folder + '/emblems/' + emblem[1] + '.svg', 'w')
+		f.write(data)
+		f.close()
 
 
-				f = open('hicolor/' + folder + '/places/folder_color_' + name + addon[1] + '.svg', 'w')
-				f.write(changed)
-				f.close()
 
 
 
